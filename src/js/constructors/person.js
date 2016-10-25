@@ -14,4 +14,6 @@ function Person (options) {
 
 };
 
+
+//shift functions out of the instance and into the prototype. 
 export { Person };

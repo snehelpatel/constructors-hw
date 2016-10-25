@@ -14,6 +14,6 @@ if (opts.hungry === false) {
   };
 };
 
-
+//shift functions out of the instance and into the prototype. 
 
 export { Dog };

@@ -3,10 +3,42 @@ import {it, expect} from "./test_lib";
 // Constructors
 // Only add code to *THIS* section!
 
-///
-///
-///
-///
+//shift functions out of the instance and into the prototype.
+
+function Human (option){
+let opt = option || {};
+if (opt.alertness < 0.1) {
+  this.alertness = true
+} else {this.alertness = false};
+
+this.hasCoffee = false;
+this.needsCoffee = true;
+
+
+
+
+
+this.buy = function (coffee) {coffee.omf}
+this.drink = function (coffee) {};
+
+
+// for (i=0; i < 0.4; )
+
+// if (opt.alertness > 0.4 ) {
+//   this.alertness = false
+// } else if (opt.alertness < 0.3){
+//   this.alertness = false
+// } else {this.alertness = true}
+//  else if (this === "Barry"){
+//   this.alertness = false
+// }
+
+ }
+
+function Coffee (options) {
+  let opts = options || {};
+this.full = opts.full || false;
+this.empty = false;}
 
 // Do not ADD or MODIFY code below this line :D
 
