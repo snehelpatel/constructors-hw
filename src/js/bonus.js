@@ -7,38 +7,50 @@ import {it, expect} from "./test_lib";
 
 function Human (option){
 let opt = option || {};
-if (opt.alertness < 0.1) {
-  this.alertness = true
-} else {this.alertness = false};
+this.alertness = opt.alertness || 0;
 
-this.hasCoffee = false;
-this.needsCoffee = true;
+this.hasCoffee = opt.hasCoffee || false;
+this.needsCoffee = opt.needsCoffee || true;
 
 
+//allowing Coffee into Human
+this.buy = function (purchase) {
+  this.Coffee = purchase;
+this.hasCoffee = true}
+//ben drinking coffee
 
 
+this.drink = function () {
+this.alertness =+ 0.31
+this.Coffee.full = false;
+this.Coffee.empty = false;
 
-this.buy = function (coffee) {coffee.omf}
-this.drink = function (coffee) {};
+//kenny/rodney
 
+this.Coffee.carafs++;
 
-// for (i=0; i < 0.4; )
-
-// if (opt.alertness > 0.4 ) {
-//   this.alertness = false
-// } else if (opt.alertness < 0.3){
-//   this.alertness = false
-// } else {this.alertness = true}
-//  else if (this === "Barry"){
-//   this.alertness = false
-// }
-
- }
+if (this.Coffee.carafs === 3){
+  this.Coffee.empty = true;
+  this.alertness = 0.99;
+    }
+//end of Rodney's coffee
+  }
+//end of drink()
+};
+//end of Human 
 
 function Coffee (options) {
   let opts = options || {};
-this.full = opts.full || false;
-this.empty = false;}
+this.full = true;
+this.empty = true;
+this.carafs = opts.carafs || 0;
+
+}
+
+
+
+
+
 
 // Do not ADD or MODIFY code below this line :D
 
@@ -56,11 +68,15 @@ it("needs coffee to wake up", function () {
 it("can drink coffee to become more alive", function () {
   let ben = new Human("Ben");
   let omf = new Coffee("Orange Mocha Frappucino");
+  // omf is full
   expect(omf.full).toBe(true);
-
+// then ben buys it --still full
   ben.buy(omf);
+//until he drinks it --not completely
   ben.drink();
+// afterwhich his alertness increases to between 0.3 and 0.4
   expect(ben.alertness > 0.3 && ben.alertness < 0.4).toBe(true);
+//after ben is done drinking coffee, omf isn't full or empty
   expect(omf.full).toBe(false);
   expect(omf.empty).toBe(false);
 });

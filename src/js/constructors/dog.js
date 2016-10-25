@@ -5,7 +5,7 @@ this.color = opts.color || "black";
 // Sadie as Mason's
 if (opts.owner === 'mason') {
   this.owner = 'sadie'
-} else { opts.owner = {};}
+} else { opts.owner}
 //If Sadie's hunger is set to false, keept it that way and set the others to true??
 if (opts.hungry === false) {
     this.hungry = false
@@ -14,6 +14,6 @@ if (opts.hungry === false) {
   };
 };
 
-//shift functions out of the instance and into the prototype. 
+//shift functions out of the instance and into the prototype
 
 export { Dog };
